@@ -234,7 +234,7 @@ var literalNames = [ null, "'g'", "'i'", "'m'", "'u'", "'c'", null, null,
                      null, "'<<'", "'>>'", "'xor'", "'if'", "'elif'", "'else'", 
                      null, null, null, null, null, null, null, null, null, 
                      "'false'", "'true'", "'await'", "'break'", "'catch'", 
-                     "'fn'", "'local'", "'ret'", "'throw'", "'try'", "'while'" ];
+                     null, "'local'", null, "'throw'", "'try'", "'while'" ];
 
 var symbolicNames = [ null, null, null, null, null, null, "SL_CMT", "WS", 
                       "ARR_FAT", "ARR_L", "ARR_R", "COLON", "COMMA", "CURLY_L", 
