@@ -76,3 +76,28 @@ $("input").all(fn(input) {
     input.value = "Surprise!"
 })
 ```
+
+### Finally, a "null" literal
+
+### Decorators?
+
+```arroba
+Reflection = import("<reflection>")
+
+fn myDecorator(target) {
+    print("Attached to ${target}!")
+}
+
+@myDecorator local:foo = 3
+
+@myDecorator fn MyClass() {
+    local:this = any()
+    
+    this.bar = "baz"
+    
+    ret this
+}
+
+// Easy to query
+fn isDecorated(x) => Reflection.hasDecorator(x, myDecorator)
+```

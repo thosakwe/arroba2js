@@ -1,4 +1,4 @@
-// Generated from .\Arroba.g4 by ANTLR 4.5.2
+// Generated from ./Arroba.g4 by ANTLR 4.5.2
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 

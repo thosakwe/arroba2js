@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build-antlr && npm run build-lib && npm run build-polyfill",
     "build-antlr": "node build-antlr.js",
-    "build-lib": "babel -d lib/ src",
+    "build-lib": "tsc -p . && babel -d lib/ src/",
     "build-polyfill": "webpack --progress --colors",
     "jshint": "jshint src/. test/. --config",
     "mocha": "mocha test/ --recursive --compilers js:babel-register",
@@ -54,6 +54,7 @@
     "mocha": "^2.5.3",
     "nightmare": "^2.5.1",
     "rimraf": "^2.5.2",
+    "typescript": "^1.8.10",
     "webpack": "^1.13.1",
     "whatwg-fetch": "^1.0.0"
   }

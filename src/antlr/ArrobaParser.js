@@ -1,7 +1,9 @@
-// Generated from .\Arroba.g4 by ANTLR 4.5.2
+// Generated from ./Arroba.g4 by ANTLR 4.5.2
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 var ArrobaListener = require('./ArrobaListener').ArrobaListener;
+var ArrobaVisitor = require('./ArrobaVisitor').ArrobaVisitor;
+
 var grammarFileName = "Arroba.g4";
 
 var serializedATN = ["\u0003\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd",
@@ -393,6 +395,14 @@ CompilationUnitContext.prototype.exitRule = function(listener) {
 	}
 };
 
+CompilationUnitContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitCompilationUnit(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -491,6 +501,14 @@ StmtContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitStmt(this);
 	}
+};
+
+StmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -618,6 +636,14 @@ AssignStmtContext.prototype.exitRule = function(listener) {
 	}
 };
 
+AssignStmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitAssignStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -688,6 +714,14 @@ ExprStmtContext.prototype.exitRule = function(listener) {
 	}
 };
 
+ExprStmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitExprStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -745,6 +779,14 @@ BreakStmtContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitBreakStmt(this);
 	}
+};
+
+BreakStmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitBreakStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -810,6 +852,14 @@ RetStmtContext.prototype.exitRule = function(listener) {
 	}
 };
 
+RetStmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitRetStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -873,6 +923,14 @@ ThrowStmtContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitThrowStmt(this);
 	}
+};
+
+ThrowStmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitThrowStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -988,6 +1046,14 @@ TryStmtContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitTryStmt(this);
 	}
+};
+
+TryStmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitTryStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -1167,6 +1233,14 @@ WhileStmtContext.prototype.exitRule = function(listener) {
 	}
 };
 
+WhileStmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitWhileStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -1260,6 +1334,14 @@ IfStmtContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitIfStmt(this);
 	}
+};
+
+IfStmtContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitIfStmt(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -1371,6 +1453,14 @@ IfBlockContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitIfBlock(this);
 	}
+};
+
+IfBlockContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitIfBlock(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -1510,6 +1600,14 @@ ElifBlockContext.prototype.exitRule = function(listener) {
 	}
 };
 
+ElifBlockContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitElifBlock(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -1635,6 +1733,14 @@ ElseBlockContext.prototype.exitRule = function(listener) {
 	}
 };
 
+ElseBlockContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitElseBlock(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -1741,6 +1847,14 @@ StringExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+StringExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitStringExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function BoolExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -1779,6 +1893,14 @@ BoolExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitBoolExpr(this);
 	}
+};
+
+BoolExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitBoolExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -1835,6 +1957,14 @@ FunctionExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+FunctionExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitFunctionExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function IdExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -1860,6 +1990,14 @@ IdExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitIdExpr(this);
 	}
+};
+
+IdExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitIdExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -1894,6 +2032,14 @@ RegexLiteralExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitRegexLiteralExpr(this);
 	}
+};
+
+RegexLiteralExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitRegexLiteralExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -1937,6 +2083,14 @@ InlineFunctionExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitInlineFunctionExpr(this);
 	}
+};
+
+InlineFunctionExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitInlineFunctionExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -1983,6 +2137,14 @@ IndexExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+IndexExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitIndexExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function RawStringExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -2008,6 +2170,14 @@ RawStringExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitRawStringExpr(this);
 	}
+};
+
+RawStringExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitRawStringExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -2069,6 +2239,14 @@ AwaitExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+AwaitExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitAwaitExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function ArrayExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -2123,6 +2301,14 @@ ArrayExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+ArrayExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitArrayExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function NumExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -2156,6 +2342,14 @@ NumExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitNumExpr(this);
 	}
+};
+
+NumExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitNumExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -2193,6 +2387,14 @@ LocalExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+LocalExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitLocalExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function MemberExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -2228,6 +2430,14 @@ MemberExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+MemberExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitMemberExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function ConstBoolExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -2257,6 +2467,14 @@ ConstBoolExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitConstBoolExpr(this);
 	}
+};
+
+ConstBoolExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitConstBoolExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -2292,6 +2510,14 @@ NestedExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitNestedExpr(this);
 	}
+};
+
+NestedExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitNestedExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -2352,6 +2578,14 @@ MathExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+MathExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitMathExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function ArrowRightExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -2388,6 +2622,14 @@ ArrowRightExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitArrowRightExpr(this);
 	}
+};
+
+ArrowRightExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitArrowRightExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -2445,6 +2687,14 @@ InvocationExprContext.prototype.exitRule = function(listener) {
 	}
 };
 
+InvocationExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitInvocationExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 function NegationExprContext(parser, ctx) {
 	ExprContext.call(this, parser);
@@ -2474,6 +2724,14 @@ NegationExprContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitNegationExpr(this);
 	}
+};
+
+NegationExprContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitNegationExpr(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 
@@ -2946,6 +3204,14 @@ ParamSpecContext.prototype.exitRule = function(listener) {
 	}
 };
 
+ParamSpecContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitParamSpec(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
+};
+
 
 
 
@@ -3070,6 +3336,14 @@ BooleanOperatorContext.prototype.exitRule = function(listener) {
     if(listener instanceof ArrobaListener ) {
         listener.exitBooleanOperator(this);
 	}
+};
+
+BooleanOperatorContext.prototype.accept = function(visitor) {
+    if ( visitor instanceof ArrobaVisitor ) {
+        return visitor.visitBooleanOperator(this);
+    } else {
+        return visitor.visitChildren(this);
+    }
 };
 
 

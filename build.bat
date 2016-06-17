@@ -1,2 +1,2 @@
 @echo off
-antlr4 -Dlanguage=JavaScript -o .\src\antlr .\Arroba.g4
+antlr4 -Dlanguage=JavaScript -visitor -o .\src\antlr .\Arroba.g4

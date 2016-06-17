@@ -1,7 +1,7 @@
 const scripts = document.querySelectorAll('script[type="application/arroba"]');
 const promises = [];
 
-for (script of scripts) {
+for (let script of scripts) {
     const src = script.getAttribute("src");
 
     if (src) {
