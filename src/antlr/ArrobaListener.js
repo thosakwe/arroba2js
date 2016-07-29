@@ -1,4 +1,4 @@
-// Generated from ./Arroba.g4 by ANTLR 4.5.2
+// Generated from /Users/tobe/Source/Node.js/arroba2js/Arroba.g4 by ANTLR 4.5.3
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 
@@ -305,6 +305,15 @@ ArrobaListener.prototype.enterParamSpec = function(ctx) {
 
 // Exit a parse tree produced by ArrobaParser#paramSpec.
 ArrobaListener.prototype.exitParamSpec = function(ctx) {
+};
+
+
+// Enter a parse tree produced by ArrobaParser#arithmeticOperator.
+ArrobaListener.prototype.enterArithmeticOperator = function(ctx) {
+};
+
+// Exit a parse tree produced by ArrobaParser#arithmeticOperator.
+ArrobaListener.prototype.exitArithmeticOperator = function(ctx) {
 };
 
 

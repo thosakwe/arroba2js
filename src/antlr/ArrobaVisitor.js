@@ -1,4 +1,4 @@
-// Generated from ./Arroba.g4 by ANTLR 4.5.2
+// Generated from /Users/tobe/Source/Node.js/arroba2js/Arroba.g4 by ANTLR 4.5.3
 // jshint ignore: start
 var antlr4 = require('antlr4/index');
 
@@ -174,6 +174,11 @@ ArrobaVisitor.prototype.visitNegationExpr = function(ctx) {
 
 // Visit a parse tree produced by ArrobaParser#paramSpec.
 ArrobaVisitor.prototype.visitParamSpec = function(ctx) {
+};
+
+
+// Visit a parse tree produced by ArrobaParser#arithmeticOperator.
+ArrobaVisitor.prototype.visitArithmeticOperator = function(ctx) {
 };
 
 

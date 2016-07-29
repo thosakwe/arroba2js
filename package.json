@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run build-antlr && npm run build-lib && npm run build-polyfill",
     "build-antlr": "node build-antlr.js",
-    "build-lib": "tsc -p . && babel -d lib/ src/",
+    "build-babel": "babel -d lib/ src/",
+    "build-lib": "tsc -p . && npm run build-babel",
     "build-polyfill": "webpack --progress --colors",
     "jshint": "jshint src/. test/. --config",
     "mocha": "mocha test/ --recursive --compilers js:babel-register",
@@ -17,7 +18,8 @@
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "test": "npm run build && npm run jshint && npm run test"
+    "test": "npm run build && npm run jshint && npm run test",
+    "watch-babel": "babel --watch -d lib/ src/"
   },
   "bin": {
     "arroba2js": "lib/bin/arroba2.js"
@@ -41,6 +43,7 @@
     "argparse": "^1.0.7",
     "babel-polyfill": "^6.9.1",
     "babel-runtime": "^6.9.2",
+    "escodegen": "^1.8.0",
     "jshint": "^2.9.2"
   },
   "devDependencies": {
