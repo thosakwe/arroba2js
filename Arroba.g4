@@ -2,7 +2,7 @@ grammar Arroba;
 
 compilationUnit: stmt*;
 
-stmt: (assignStmt | exprStmt | ifStmt | breakStmt | retStmt | throwStmt | tryStmt | whileStmt) SEMI?;
+stmt: (assignStmt | exprStmt | ifStmt | breakStmt | retStmt | throwStmt | tryStmt | whileStmt | externStmt) SEMI?;
 assignStmt: left=expr (ARR_L | EQUALS) right=expr;
 exprStmt: expr;
 breakStmt: BREAK;
@@ -12,6 +12,7 @@ tryStmt:
     ((TRY toTry+=stmt) | (TRY CURLY_L toTry+=stmt* CURLY_R))
     ((CATCH PAREN_L ID? PAREN_R toCatch+=stmt) | (CATCH PAREN_L ID? PAREN_R CURLY_L (toCatch+=stmt)* CURLY_R));
 whileStmt: WHILE PAREN_L expr PAREN_R CURLY_L stmt* CURLY_R;
+externStmt: EXTERN ID;
 
 ifStmt:  ifBlock elifBlock* elseBlock?;
 ifBlock: (IF PAREN_L expr PAREN_R stmt) | (IF PAREN_L expr PAREN_R CURLY_L stmt* CURLY_R);
@@ -96,6 +97,7 @@ TRUE: 'true';
 AWAIT: 'await';
 BREAK: 'break';
 CATCH: 'catch';
+EXTERN: 'extern';
 FN: 'fn' | 'function';
 LOCAL: 'local';
 RET: 'ret' | 'return';
@@ -109,5 +111,5 @@ INT: MINUS? [0-9]+;
 fragment ESCAPED: '\\"' | '\\r' | '\\n';
 RAW_STRING: 'r"' (ESCAPED | ~('\n'|'\r'))*? '"';
 STRING: '"' (ESCAPED | ~('\n'|'\r'))*? '"';
-REGEX_LITERAL: '/' ~'/'+ '/' ('g' | 'i' | 'm' | 'u' | 'c')*;
+REGEX_LITERAL: '/' ~'/'+ '/' ('g' | 'i' | 'm' | 'u' | 'y')*;
 ID: [a-zA-Z_] [a-zA-Z0-9_]*;

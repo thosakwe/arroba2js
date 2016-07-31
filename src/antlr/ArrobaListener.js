@@ -92,6 +92,15 @@ ArrobaListener.prototype.exitWhileStmt = function(ctx) {
 };
 
 
+// Enter a parse tree produced by ArrobaParser#externStmt.
+ArrobaListener.prototype.enterExternStmt = function(ctx) {
+};
+
+// Exit a parse tree produced by ArrobaParser#externStmt.
+ArrobaListener.prototype.exitExternStmt = function(ctx) {
+};
+
+
 // Enter a parse tree produced by ArrobaParser#ifStmt.
 ArrobaListener.prototype.enterIfStmt = function(ctx) {
 };

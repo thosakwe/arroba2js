@@ -57,6 +57,11 @@ ArrobaVisitor.prototype.visitWhileStmt = function(ctx) {
 };
 
 
+// Visit a parse tree produced by ArrobaParser#externStmt.
+ArrobaVisitor.prototype.visitExternStmt = function(ctx) {
+};
+
+
 // Visit a parse tree produced by ArrobaParser#ifStmt.
 ArrobaVisitor.prototype.visitIfStmt = function(ctx) {
 };

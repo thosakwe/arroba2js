@@ -1,5 +1,30 @@
-function input(prompt) {
-  return window.prompt(prompt);
+let input;
+
+if (typeof window !== "undefined") {
+  input = (prompt) => window.prompt(prompt);
+} else {
+  const readline = require("readline");
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+  });
+
+  let _inputLine = null;
+  rl.on('line', function(line){
+    _inputLine = line;
+  });
+
+  input = (prompt) => {
+    _inputLine = null;
+    process.stdout.write(`${prompt} `);
+
+    while (_inputLine === null) {
+      // Wait
+    }
+
+    return _inputLine;
+  };
 }
 
 function _arrobaPrint(out, args) {

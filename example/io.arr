@@ -18,3 +18,5 @@ input("Legal Name:")
     -> (name) => "Nice to meet you, ${name}!"
     -> print
     -> alert
+
+

@@ -163,13 +163,15 @@ export default class NaiveCompiler extends BaseCompiler {
       }
     } else if (ctx.tryStmt()) {
       return this.visitTryStmt(ctx.tryStmt());
+    } else if (ctx.externStmt()) {
+      return this.visitExternStmt(ctx.externStmt());
     }
   }
 
   visitAssignStmt(ctx) {
     let isNew = false;
 
-    if (!(ctx.left instanceof ArrobaParser.LocalExprContext)) {
+    if (ctx.left instanceof ArrobaParser.IdExprContext) {
       const target = ctx.left.getText().replace(/\..+$/, "");
 
       if (!this.get(target))
@@ -217,6 +219,15 @@ export default class NaiveCompiler extends BaseCompiler {
     return {
       type: "ExpressionStatement",
       expression: this.visitExpr(ctx.expr())
+    };
+  }
+
+  visitExternStmt(ctx) {
+    const id = ctx.ID().getText();
+    this.set(id, true);
+
+    return {
+      type: "EmptyStatement"
     };
   }
 
@@ -406,6 +417,11 @@ export default class NaiveCompiler extends BaseCompiler {
         elements,
         type: "ArrayExpression"
       }
+    } else if (expr instanceof ArrobaParser.LocalExprContext) {
+      return {
+        type: "Identifier",
+        name: NaiveCompiler.normalizeId(expr.ID().getText())
+      }
     } else if (expr instanceof ArrobaParser.InvocationExprContext) {
       return this.invokeFunction(expr.target, expr.args);
     } else if (expr instanceof ArrobaParser.MathExprContext || expr instanceof ArrobaParser.BoolExprContext) {
@@ -419,8 +435,21 @@ export default class NaiveCompiler extends BaseCompiler {
       return {left, right, operator, type: "BinaryExpression"};
     } else if (expr instanceof ArrobaParser.NestedExprContext) {
       return this.visitExpr(expr.expr());
+    } else if (expr instanceof ArrobaParser.RegexLiteralExprContext) {
+      return {
+        type: "CallExpression",
+        callee: {
+          type: "Identifier",
+          name: "rgx"
+        },
+        arguments: [
+          {
+            type: "Literal",
+            value: expr.REGEX_LITERAL().getText()
+          }
+        ]
+      };
     }
-
     return {
       type: "Literal",
       value: expr.getText()
