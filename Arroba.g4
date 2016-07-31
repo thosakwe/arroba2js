@@ -10,7 +10,7 @@ retStmt: RET expr;
 throwStmt: THROW expr;
 tryStmt:
     ((TRY toTry+=stmt) | (TRY CURLY_L toTry+=stmt* CURLY_R))
-    ((CATCH PAREN_L ID? PAREN_R toCatch+=stmt) | (CATCH PAREN_L ID? PAREN_R CURLY_L toCatch+=stmt* CURLY_R));
+    ((CATCH PAREN_L ID? PAREN_R toCatch+=stmt) | (CATCH PAREN_L ID? PAREN_R CURLY_L (toCatch+=stmt)* CURLY_R));
 whileStmt: WHILE PAREN_L expr PAREN_R CURLY_L stmt* CURLY_R;
 
 ifStmt:  ifBlock elifBlock* elseBlock?;

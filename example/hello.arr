@@ -1,1 +1,1 @@
-"Hello, JS world!" -> print
+"Hello, world!" -> print
